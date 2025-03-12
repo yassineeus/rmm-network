@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Moroccan Mathematicians Network</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- MathJax for mathematical formulas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <style>
+        .resources-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .resources-container {
+                grid-template-columns: 250px 1fr;
+            }
+        }
+        
+        .resources-nav {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            align-self: start;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .resources-nav h3 {
+            color: #2056a8;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .resources-nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .resources-nav ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .resources-nav ul li a {
+            display: block;
+            padding: 0.5rem;
+            color: #333;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .resources-nav ul li a:hover, .resources-nav ul li a.active {
+            background-color: #e0eaef;
+            color: #2056a8;
+        }
+        
+        .resources-content {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        
+        .resource-section {
+            margin-bottom: 3rem;
+        }
+        
+        .resource-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .resource-section h3 {
+            color: #2056a8;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .resource-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .resource-card h4 {
+            color: #2056a8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resource-card .author {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        
+        .resource-card .description {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .resource-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card .tags span {
+            background-color: #e0eaef;
+            color: #2056a8;
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .resource-card .action {
+            text-align: right;
+        }
+        
+        .resource-card .action a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #2056a8;
+            color: white;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .resource-card .action a:hover {
+            background-color: #163d7a;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: #e0eaef;
+            color: #2056a8;
+            font-weight: bold;
+        }
+        
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MMN</h1>
+            <p>Moroccan Mathematicians Network</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="english.html">Home</a></li>
+                <li><a href="members_en.html">Members</a></li>
+                <li><a href="events_en.html">Events</a></li>
+                <li><a href="resources_en.html">Resources</a></li>
+                <li><a href="contact_en.html">Contact</a></li>
+                <li><a href="ressources.html">Français</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Resources</h2>
+            <p>Access publications, teaching materials, and research tools</p>
+        </section>
+
+        <div class="resources-container">
+            <div class="resources-nav">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#publications" class="active">Publications</a></li>
+                    <li><a href="#teaching">Teaching Materials</a></li>
+                    <li><a href="#software">Software & Tools</a></li>
+                    <li><a href="#funding">Funding Opportunities</a></li>
+                    <li><a href="#journals">Journals & Conferences</a></li>
+                    <li><a href="#collaborations">Research Collaborations</a></li>
+                </ul>
+            </div>
+
+            <div class="resources-content">
+                <div id="publications" class="resource-section">
+                    <h3>Publications</h3>
+                    <p>Recent papers and research publications by members of the Moroccan Mathematicians Network.</p>
+                    
+                    <div class="resource-list">
+                        <div class="resource-card">
+                            <h4>On the Classification of Algebraic Varieties over Finite Fields</h4>
+                            <div class="author">by Prof. Mehdi El Alaoui</div>
+                            <div class="description">
+                                This paper presents a new approach to classifying algebraic varieties defined over finite fields, with applications to coding theory.
+                            </div>
+                            <div class="tags">
+                                <span>Algebraic Geometry</span>
+                                <span>Coding Theory</span>
+                            </div>
+                            <div class="action">
+                                <a href="#download">Download PDF</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Statistical Models for Climate Prediction in North Africa</h4>
+                            <div class="author">by Dr. Sara Benjelloun, Dr. Ahmed Moussa</div>
+                            <div class="description">
+                                A collaborative study developing new statistical methods for analyzing climate data specific to North African regions.
+                            </div>
+                            <div class="tags">
+                                <span>Statistics</span>
+                                <span>Applied Mathematics</span>
+                                <span>Climate Modeling</span>
+                            </div>
+                            <div class="action">
+                                <a href="#download">Download PDF</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Prime Number Distribution in Cryptographic Applications</h4>
+                            <div class="author">by Prof. Hassan Benabdellah</div>
+                            <div class="description">
+                                This research explores optimized algorithms for generating prime numbers suitable for modern cryptographic protocols.
+                            </div>
+                            <div class="tags">
+                                <span>Number Theory</span>
+                                <span>Cryptography</span>
+                            </div>
+                            <div class="action">
+                                <a href="#download">Download PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; text-align: right;">
+                        <a href="#view-all">View all publications →</a>
+                    </p>
+                </div>
+
+                <div id="teaching" class="resource-section">
+                    <h3>Teaching Materials</h3>
+                    <p>Educational resources and course materials for mathematics education at various levels.</p>
+                    
+                    <div class="resource-list">
+                        <div class="resource-card">
+                            <h4>Introduction to Abstract Algebra</h4>
+                            <div class="author">Course materials by Prof. Karim Benameur</div>
+                            <div class="description">
+                                Complete lecture notes, problem sets, and solutions for a semester-long undergraduate course in abstract algebra.
+                            </div>
+                            <div class="tags">
+                                <span>Algebra</span>
+                                <span>Undergraduate</span>
+                            </div>
+                            <div class="action">
+                                <a href="#access">Access Materials</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Applied Differential Equations</h4>
+                            <div class="author">Course materials by Dr. Nadia Tazi</div>
+                            <div class="description">
+                                A practical approach to teaching differential equations with real-world applications and computational methods.
+                            </div>
+                            <div class="tags">
+                                <span>Differential Equations</span>
+                                <span>Applied Mathematics</span>
+                            </div>
+                            <div class="action">
+                                <a href="#access">Access Materials</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; text-align: right;">
+                        <a href="#view-all-teaching">View all teaching materials →</a>
+                    </p>
+                </div>
+
+                <div id="software" class="resource-section">
+                    <h3>Software & Tools</h3>
+                    <p>Mathematical software, computation tools, and resources for research and education.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Access</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MathSolve</td>
+                                <td>Computational</td>
+                                <td>Advanced symbolic computation package developed at University Mohammed V</td>
+                                <td><a href="#link">Download</a></td>
+                            </tr>
+                            <tr>
+                                <td>GeomViz</td>
+                                <td>Visualization</td>
+                                <td>Interactive geometry visualization tool for educational purposes</td>
+                                <td><a href="#link">Web App</a></td>
+                            </tr>
+                            <tr>
+                                <td>StatAnalysis</td>
+                                <td>Statistics</td>
+                                <td>Statistical analysis package with specialized tools for Moroccan demographic data</td>
+                                <td><a href="#link">Download</a></td>
+                            </tr>
+                            <tr>
+                                <td>AlgebraicLib</td>
+                                <td>Research</td>
+                                <td>Library of algorithms for algebraic geometry computations</td>
+                                <td><a href="#link">GitHub</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="funding" class="resource-section">
+                    <h3>Funding Opportunities</h3>
+                    <p>Grants, scholarships, and funding programs available for mathematical research in Morocco.</p>
+                    
+                    <ul>
+                        <li>
+                            <strong>CNRST Research Grants</strong> - Annual funding for mathematical research projects in Morocco.
+                            <br>
+                            <span style="color: #666;">Next deadline: September 30, 2025</span>
+                        </li>
+                        <li>
+                            <strong>Morocco-EU Research Partnership</strong> - Collaborative research grants with European institutions.
+                            <br>
+                            <span style="color: #666;">Next deadline: November 15, 2025</span>
+                        </li>
+                        <li>
+                            <strong>Excellence Scholarships for PhD Students</strong> - Full funding for doctoral studies in mathematics.
+                            <br>
+                            <span style="color: #666;">Next deadline: March 31, 2026</span>
+                        </li>
+                        <li>
+                            <strong>International Conference Travel Grants</strong> - Support for presenting at international conferences.
+                            <br>
+                            <span style="color: #666;">Applications accepted year-round</span>
+                        </li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem;">
+                        <a href="#funding-details">View detailed application requirements →</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Moroccan Mathematicians Network</p>
+        <div class="social">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
