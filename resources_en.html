@@ -154,6 +154,109 @@
         table tr:hover {
             background-color: #f5f5f5;
         }
+        
+        /* Styles for journal listings */
+        .journal-search {
+            margin-bottom: 20px;
+        }
+        
+        .journal-search input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .journal-search button {
+            background-color: #2056a8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .journal-search button:hover {
+            background-color: #163d7a;
+        }
+        
+        .journal-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .journal-filters button {
+            background-color: white;
+            border: 1px solid #2056a8;
+            color: #2056a8;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .journal-filters button.active {
+            background-color: #2056a8;
+            color: white;
+        }
+        
+        .journal-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .journal-table th {
+            background-color: #e0eaef;
+            color: #2056a8;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .journal-table th:hover {
+            background-color: #c7dbe8;
+        }
+        
+        .journal-table th::after {
+            content: "⇵";
+            margin-left: 5px;
+            font-size: 12px;
+        }
+        
+        .journal-table th.asc::after {
+            content: "↑";
+        }
+        
+        .journal-table th.desc::after {
+            content: "↓";
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 5px;
+        }
+        
+        .pagination button {
+            background-color: white;
+            border: 1px solid #2056a8;
+            color: #2056a8;
+            width: 30px;
+            height: 30px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination button.active {
+            background-color: #2056a8;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -174,8 +277,8 @@
             <div class="resources-nav">
                 <h3>Categories</h3>
                 <ul>
-                    <li><a href="#research" class="active">Research Databases</a></li>
-                    <li><a href="#journals">Journals & Publications</a></li>
+                    <li><a href="#research">Research Databases</a></li>
+                    <li><a href="#journals" class="active">Journals & Publications</a></li>
                     <li><a href="#software">Software & Tools</a></li>
                     <li><a href="#associations">Mathematical Associations</a></li>
                     <li><a href="#teaching">Teaching Resources</a></li>
@@ -184,6 +287,145 @@
             </div>
 
             <div class="resources-content">
+                <div id="journals" class="resource-section">
+                    <h3>Mathematics Journals</h3>
+                    <p>Comprehensive list of mathematics journals indexed in Scopus. Data sourced from SCImago Journal Rank (SJR) 2023.</p>
+                    
+                    <div class="journal-search">
+                        <input type="text" id="journalSearch" placeholder="Search journals by title, publisher, or subject...">
+                        <button id="searchButton">Search</button>
+                    </div>
+                    
+                    <div class="journal-filters">
+                        <button class="active">All</button>
+                        <button>Q1 Journals</button>
+                        <button>Q2 Journals</button>
+                        <button>Q3 Journals</button>
+                        <button>Q4 Journals</button>
+                        <button>Open Access</button>
+                    </div>
+                    
+                    <table class="journal-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>SJR</th>
+                                <th>Quartile</th>
+                                <th>H-index</th>
+                                <th>Publisher</th>
+                                <th>Country</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://annals.math.princeton.edu/" target="_blank">Annals of Mathematics</a></td>
+                                <td>9.217</td>
+                                <td>Q1</td>
+                                <td>108</td>
+                                <td>Princeton University</td>
+                                <td>United States</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.ams.org/journals/jams/all_issues.html" target="_blank">Journal of the American Mathematical Society</a></td>
+                                <td>6.875</td>
+                                <td>Q1</td>
+                                <td>89</td>
+                                <td>American Mathematical Society</td>
+                                <td>United States</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.springer.com/journal/40993" target="_blank">Research in Mathematical Sciences</a></td>
+                                <td>4.918</td>
+                                <td>Q1</td>
+                                <td>31</td>
+                                <td>Springer</td>
+                                <td>Germany</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.springer.com/journal/222" target="_blank">Inventiones Mathematicae</a></td>
+                                <td>4.813</td>
+                                <td>Q1</td>
+                                <td>114</td>
+                                <td>Springer</td>
+                                <td>Germany</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://projecteuclid.org/euclid.acta" target="_blank">Acta Mathematica</a></td>
+                                <td>4.759</td>
+                                <td>Q1</td>
+                                <td>87</td>
+                                <td>Institut Mittag-Leffler</td>
+                                <td>Sweden</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.sciencedirect.com/journal/journal-of-functional-analysis" target="_blank">Journal of Functional Analysis</a></td>
+                                <td>2.513</td>
+                                <td>Q1</td>
+                                <td>106</td>
+                                <td>Elsevier</td>
+                                <td>Netherlands</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://msp.org/ant/about/journal/about.html" target="_blank">Algebra and Number Theory</a></td>
+                                <td>2.398</td>
+                                <td>Q1</td>
+                                <td>30</td>
+                                <td>Mathematical Sciences Publishers</td>
+                                <td>United States</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.springer.com/journal/13163" target="_blank">Journal of Algebraic Combinatorics</a></td>
+                                <td>1.055</td>
+                                <td>Q2</td>
+                                <td>48</td>
+                                <td>Springer</td>
+                                <td>Netherlands</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.sciencedirect.com/journal/linear-algebra-and-its-applications" target="_blank">Linear Algebra and its Applications</a></td>
+                                <td>1.021</td>
+                                <td>Q2</td>
+                                <td>121</td>
+                                <td>Elsevier</td>
+                                <td>Netherlands</td>
+                                <td>Journal</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://www.sciencedirect.com/journal/discrete-mathematics" target="_blank">Discrete Mathematics</a></td>
+                                <td>0.725</td>
+                                <td>Q2</td>
+                                <td>85</td>
+                                <td>Elsevier</td>
+                                <td>Netherlands</td>
+                                <td>Journal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="pagination">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>...</button>
+                        <button>></button>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">
+                        <strong>Note:</strong> This table shows a small subset of mathematics journals. For the complete list of mathematics journals with detailed metrics, please consult the <a href="https://www.scimagojr.com/journalrank.php?category=2600" target="_blank">SCImago Journal Rank (Mathematics)</a> website.
+                    </p>
+                </div>
+
                 <div id="research" class="resource-section">
                     <h3>Research Databases</h3>
                     <p>Essential databases and search engines for mathematical research.</p>
@@ -271,84 +513,6 @@
                             </div>
                             <div class="link">
                                 <a href="https://zbmath.org/" target="_blank">Access zbMATH</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="journals" class="resource-section">
-                    <h3>Journals & Publications</h3>
-                    <p>Major mathematical journals and publication outlets.</p>
-                    
-                    <div class="resource-list">
-                        <div class="resource-item">
-                            <h4>Annals of Mathematics</h4>
-                            <div class="description">
-                                One of the most prestigious journals in mathematics, publishing research papers in all areas of mathematics.
-                            </div>
-                            <div class="tags">
-                                <span>High Impact</span>
-                                <span>All Areas</span>
-                            </div>
-                            <div class="link">
-                                <a href="https://annals.math.princeton.edu/" target="_blank">Journal Website</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-item">
-                            <h4>Journal of the American Mathematical Society</h4>
-                            <div class="description">
-                                Publishes research articles of the highest quality in all areas of pure and applied mathematics.
-                            </div>
-                            <div class="tags">
-                                <span>High Impact</span>
-                                <span>Pure & Applied</span>
-                            </div>
-                            <div class="link">
-                                <a href="https://www.ams.org/journals/jams/all_issues.html" target="_blank">Journal Website</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-item">
-                            <h4>Inventiones Mathematicae</h4>
-                            <div class="description">
-                                Publishes research papers in any field of mathematics with particular emphasis on pure mathematics, general mathematical methods, and particularly significant applications.
-                            </div>
-                            <div class="tags">
-                                <span>High Impact</span>
-                                <span>Pure Mathematics</span>
-                            </div>
-                            <div class="link">
-                                <a href="https://www.springer.com/journal/222" target="_blank">Journal Website</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-item">
-                            <h4>Communications on Pure and Applied Mathematics</h4>
-                            <div class="description">
-                                Focuses on mathematical analysis, mathematical physics, and partial differential equations.
-                            </div>
-                            <div class="tags">
-                                <span>Analysis</span>
-                                <span>Mathematical Physics</span>
-                                <span>PDEs</span>
-                            </div>
-                            <div class="link">
-                                <a href="https://onlinelibrary.wiley.com/journal/10970312" target="_blank">Journal Website</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-item">
-                            <h4>African Journal of Mathematics</h4>
-                            <div class="description">
-                                Publishes original research articles in all areas of mathematics with focus on African researchers.
-                            </div>
-                            <div class="tags">
-                                <span>Regional</span>
-                                <span>All Areas</span>
-                            </div>
-                            <div class="link">
-                                <a href="#" target="_blank">Journal Website</a>
                             </div>
                         </div>
                     </div>
@@ -596,37 +760,4 @@
                         </div>
                         
                         <div class="resource-item">
-                            <h4>DOAJ (Mathematics journals)</h4>
-                            <div class="description">
-                                Directory of Open Access Journals listing high-quality, peer-reviewed open access journals in mathematics.
-                            </div>
-                            <div class="link">
-                                <a href="https://doaj.org/subjects/mathematics" target="_blank">Access Resources</a>
-                            </div>
-                        </div>
-                        
-                        <div class="resource-item">
-                            <h4>Open Textbook Library (Mathematics)</h4>
-                            <div class="description">
-                                Collection of free, peer-reviewed, and openly-licensed textbooks in mathematics and other disciplines.
-                            </div>
-                            <div class="link">
-                                <a href="https://open.umn.edu/opentextbooks/subjects/mathematics" target="_blank">Access Resources</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Moroccan Mathematicians Network</p>
-        <div class="social">
-            <a href="https://www.linkedin.com/groups/14622272/" target="_blank">LinkedIn</a>
-            <a href="https://x.com/MoroccanN44415" target="_blank">Twitter</a>
-            <a href="https://www.facebook.com/profile.php?id=61573770495839" target="_blank">Facebook</a>
-        </div>
-    </footer>
-</body>
-</html>
+                            <h4>DOAJ (Mathematics journals)</h
