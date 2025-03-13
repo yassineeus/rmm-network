@@ -84,71 +84,53 @@
         }
         
         .resource-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
             margin-top: 1.5rem;
         }
         
-        .resource-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
+        .resource-item {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
         }
         
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .resource-item:last-child {
+            border-bottom: none;
         }
         
-        .resource-card h4 {
+        .resource-item h4 {
             color: #2056a8;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         
-        .resource-card .author {
-            font-style: italic;
-            margin-bottom: 0.5rem;
+        .resource-item .description {
             color: #666;
-        }
-        
-        .resource-card .description {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-size: 0.95rem;
         }
         
-        .resource-card .tags {
+        .resource-item .link a {
+            color: #2056a8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .resource-item .link a:hover {
+            text-decoration: underline;
+        }
+        
+        .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1rem;
+            margin: 0.5rem 0;
         }
         
-        .resource-card .tags span {
+        .tags span {
             background-color: #e0eaef;
             color: #2056a8;
-            padding: 0.3rem 0.6rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 3px;
             font-size: 0.8rem;
-        }
-        
-        .resource-card .action {
-            text-align: right;
-        }
-        
-        .resource-card .action a {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: #2056a8;
-            color: white;
-            border-radius: 3px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        
-        .resource-card .action a:hover {
-            background-color: #163d7a;
         }
         
         table {
@@ -180,208 +162,459 @@
             <h1>MMN</h1>
             <p>Moroccan Mathematicians Network</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="english.html">Home</a></li>
-                <li><a href="members_en.html">Members</a></li>
-                <li><a href="events_en.html">Events</a></li>
-                <li><a href="resources_en.html">Resources</a></li>
-                <li><a href="contact_en.html">Contact</a></li>
-                <li><a href="ressources.html">Français</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h2>Resources</h2>
-            <p>Access publications, teaching materials, and research tools</p>
+            <h2>Research Resources</h2>
+            <p>Essential tools and links for mathematics researchers</p>
         </section>
 
         <div class="resources-container">
             <div class="resources-nav">
                 <h3>Categories</h3>
                 <ul>
-                    <li><a href="#publications" class="active">Publications</a></li>
-                    <li><a href="#teaching">Teaching Materials</a></li>
+                    <li><a href="#research" class="active">Research Databases</a></li>
+                    <li><a href="#journals">Journals & Publications</a></li>
                     <li><a href="#software">Software & Tools</a></li>
-                    <li><a href="#funding">Funding Opportunities</a></li>
-                    <li><a href="#journals">Journals & Conferences</a></li>
-                    <li><a href="#collaborations">Research Collaborations</a></li>
+                    <li><a href="#associations">Mathematical Associations</a></li>
+                    <li><a href="#teaching">Teaching Resources</a></li>
+                    <li><a href="#openaccess">Open Access Resources</a></li>
                 </ul>
             </div>
 
             <div class="resources-content">
-                <div id="publications" class="resource-section">
-                    <h3>Publications</h3>
-                    <p>Recent papers and research publications by members of the Moroccan Mathematicians Network.</p>
+                <div id="research" class="resource-section">
+                    <h3>Research Databases</h3>
+                    <p>Essential databases and search engines for mathematical research.</p>
                     
                     <div class="resource-list">
-                        <div class="resource-card">
-                            <h4>On the Classification of Algebraic Varieties over Finite Fields</h4>
-                            <div class="author">by Prof. Mehdi El Alaoui</div>
+                        <div class="resource-item">
+                            <h4>Google Scholar</h4>
                             <div class="description">
-                                This paper presents a new approach to classifying algebraic varieties defined over finite fields, with applications to coding theory.
+                                Search engine for scholarly literature across disciplines, including mathematics. Allows tracking citations, authors, and publications.
                             </div>
                             <div class="tags">
-                                <span>Algebraic Geometry</span>
-                                <span>Coding Theory</span>
+                                <span>Citation Index</span>
+                                <span>All Fields</span>
                             </div>
-                            <div class="action">
-                                <a href="#download">Download PDF</a>
+                            <div class="link">
+                                <a href="https://scholar.google.com/" target="_blank">Access Google Scholar</a>
                             </div>
                         </div>
                         
-                        <div class="resource-card">
-                            <h4>Statistical Models for Climate Prediction in North Africa</h4>
-                            <div class="author">by Dr. Sara Benjelloun, Dr. Ahmed Moussa</div>
+                        <div class="resource-item">
+                            <h4>Scopus</h4>
                             <div class="description">
-                                A collaborative study developing new statistical methods for analyzing climate data specific to North African regions.
+                                Comprehensive abstract and citation database covering peer-reviewed literature, including scientific journals, books, and conference proceedings.
                             </div>
                             <div class="tags">
-                                <span>Statistics</span>
-                                <span>Applied Mathematics</span>
-                                <span>Climate Modeling</span>
+                                <span>Citation Index</span>
+                                <span>Peer-Reviewed</span>
                             </div>
-                            <div class="action">
-                                <a href="#download">Download PDF</a>
+                            <div class="link">
+                                <a href="https://www.scopus.com/" target="_blank">Access Scopus</a>
                             </div>
                         </div>
                         
-                        <div class="resource-card">
-                            <h4>Prime Number Distribution in Cryptographic Applications</h4>
-                            <div class="author">by Prof. Hassan Benabdellah</div>
+                        <div class="resource-item">
+                            <h4>Web of Science</h4>
                             <div class="description">
-                                This research explores optimized algorithms for generating prime numbers suitable for modern cryptographic protocols.
+                                Citation database that gives access to multiple databases covering scholarly journals, books, proceedings, and publications in the sciences, social sciences, and arts and humanities.
                             </div>
                             <div class="tags">
-                                <span>Number Theory</span>
-                                <span>Cryptography</span>
+                                <span>Citation Index</span>
+                                <span>Impact Factor</span>
                             </div>
-                            <div class="action">
-                                <a href="#download">Download PDF</a>
+                            <div class="link">
+                                <a href="https://www.webofscience.com/" target="_blank">Access Web of Science</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>arXiv</h4>
+                            <div class="description">
+                                Open-access repository of electronic preprints and postprints for scientific papers in mathematics, physics, and related disciplines.
+                            </div>
+                            <div class="tags">
+                                <span>Preprints</span>
+                                <span>Open Access</span>
+                            </div>
+                            <div class="link">
+                                <a href="https://arxiv.org/archive/math" target="_blank">Access arXiv Mathematics</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>MathSciNet</h4>
+                            <div class="description">
+                                Electronic database published by the American Mathematical Society that provides access to reviews, abstracts, and bibliographic information for mathematical literature.
+                            </div>
+                            <div class="tags">
+                                <span>Reviews</span>
+                                <span>Mathematics Specific</span>
+                            </div>
+                            <div class="link">
+                                <a href="https://mathscinet.ams.org/" target="_blank">Access MathSciNet</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>zbMATH Open</h4>
+                            <div class="description">
+                                The world's most comprehensive database for mathematical publications, providing reviews and abstracts for articles, books, and conference proceedings.
+                            </div>
+                            <div class="tags">
+                                <span>Reviews</span>
+                                <span>Mathematics Specific</span>
+                                <span>Open Access</span>
+                            </div>
+                            <div class="link">
+                                <a href="https://zbmath.org/" target="_blank">Access zbMATH</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <p style="margin-top: 2rem; text-align: right;">
-                        <a href="#view-all">View all publications →</a>
-                    </p>
                 </div>
 
-                <div id="teaching" class="resource-section">
-                    <h3>Teaching Materials</h3>
-                    <p>Educational resources and course materials for mathematics education at various levels.</p>
+                <div id="journals" class="resource-section">
+                    <h3>Journals & Publications</h3>
+                    <p>Major mathematical journals and publication outlets.</p>
                     
                     <div class="resource-list">
-                        <div class="resource-card">
-                            <h4>Introduction to Abstract Algebra</h4>
-                            <div class="author">Course materials by Prof. Karim Benameur</div>
+                        <div class="resource-item">
+                            <h4>Annals of Mathematics</h4>
                             <div class="description">
-                                Complete lecture notes, problem sets, and solutions for a semester-long undergraduate course in abstract algebra.
+                                One of the most prestigious journals in mathematics, publishing research papers in all areas of mathematics.
                             </div>
                             <div class="tags">
-                                <span>Algebra</span>
-                                <span>Undergraduate</span>
+                                <span>High Impact</span>
+                                <span>All Areas</span>
                             </div>
-                            <div class="action">
-                                <a href="#access">Access Materials</a>
+                            <div class="link">
+                                <a href="https://annals.math.princeton.edu/" target="_blank">Journal Website</a>
                             </div>
                         </div>
                         
-                        <div class="resource-card">
-                            <h4>Applied Differential Equations</h4>
-                            <div class="author">Course materials by Dr. Nadia Tazi</div>
+                        <div class="resource-item">
+                            <h4>Journal of the American Mathematical Society</h4>
                             <div class="description">
-                                A practical approach to teaching differential equations with real-world applications and computational methods.
+                                Publishes research articles of the highest quality in all areas of pure and applied mathematics.
                             </div>
                             <div class="tags">
-                                <span>Differential Equations</span>
-                                <span>Applied Mathematics</span>
+                                <span>High Impact</span>
+                                <span>Pure & Applied</span>
                             </div>
-                            <div class="action">
-                                <a href="#access">Access Materials</a>
+                            <div class="link">
+                                <a href="https://www.ams.org/journals/jams/all_issues.html" target="_blank">Journal Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Inventiones Mathematicae</h4>
+                            <div class="description">
+                                Publishes research papers in any field of mathematics with particular emphasis on pure mathematics, general mathematical methods, and particularly significant applications.
+                            </div>
+                            <div class="tags">
+                                <span>High Impact</span>
+                                <span>Pure Mathematics</span>
+                            </div>
+                            <div class="link">
+                                <a href="https://www.springer.com/journal/222" target="_blank">Journal Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Communications on Pure and Applied Mathematics</h4>
+                            <div class="description">
+                                Focuses on mathematical analysis, mathematical physics, and partial differential equations.
+                            </div>
+                            <div class="tags">
+                                <span>Analysis</span>
+                                <span>Mathematical Physics</span>
+                                <span>PDEs</span>
+                            </div>
+                            <div class="link">
+                                <a href="https://onlinelibrary.wiley.com/journal/10970312" target="_blank">Journal Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>African Journal of Mathematics</h4>
+                            <div class="description">
+                                Publishes original research articles in all areas of mathematics with focus on African researchers.
+                            </div>
+                            <div class="tags">
+                                <span>Regional</span>
+                                <span>All Areas</span>
+                            </div>
+                            <div class="link">
+                                <a href="#" target="_blank">Journal Website</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <p style="margin-top: 2rem; text-align: right;">
-                        <a href="#view-all-teaching">View all teaching materials →</a>
-                    </p>
                 </div>
 
                 <div id="software" class="resource-section">
                     <h3>Software & Tools</h3>
-                    <p>Mathematical software, computation tools, and resources for research and education.</p>
+                    <p>Mathematical software and computational tools for research and teaching.</p>
                     
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Category</th>
+                                <th>Tool</th>
+                                <th>Type</th>
                                 <th>Description</th>
-                                <th>Access</th>
+                                <th>Link</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>MathSolve</td>
+                                <td>MATLAB</td>
                                 <td>Computational</td>
-                                <td>Advanced symbolic computation package developed at University Mohammed V</td>
-                                <td><a href="#link">Download</a></td>
+                                <td>Programming and numeric computing platform used for algorithm development, data analysis, visualization, and numerical computation</td>
+                                <td><a href="https://www.mathworks.com/products/matlab.html" target="_blank">Website</a></td>
                             </tr>
                             <tr>
-                                <td>GeomViz</td>
-                                <td>Visualization</td>
-                                <td>Interactive geometry visualization tool for educational purposes</td>
-                                <td><a href="#link">Web App</a></td>
+                                <td>Wolfram Mathematica</td>
+                                <td>Symbolic</td>
+                                <td>Computer algebra system with broad functionality for symbolic computation, numerical computation, visualization, and application development</td>
+                                <td><a href="https://www.wolfram.com/mathematica/" target="_blank">Website</a></td>
                             </tr>
                             <tr>
-                                <td>StatAnalysis</td>
+                                <td>SageMath</td>
+                                <td>Open Source</td>
+                                <td>Free open-source mathematics software system that builds on many existing packages, including NumPy, SciPy, matplotlib, Sympy, Maxima, and more</td>
+                                <td><a href="https://www.sagemath.org/" target="_blank">Website</a></td>
+                            </tr>
+                            <tr>
+                                <td>R</td>
                                 <td>Statistics</td>
-                                <td>Statistical analysis package with specialized tools for Moroccan demographic data</td>
-                                <td><a href="#link">Download</a></td>
+                                <td>Language and environment for statistical computing and graphics widely used among statisticians and data miners</td>
+                                <td><a href="https://www.r-project.org/" target="_blank">Website</a></td>
                             </tr>
                             <tr>
-                                <td>AlgebraicLib</td>
-                                <td>Research</td>
-                                <td>Library of algorithms for algebraic geometry computations</td>
-                                <td><a href="#link">GitHub</a></td>
+                                <td>Python with NumPy/SciPy</td>
+                                <td>Programming</td>
+                                <td>Programming language with scientific computing libraries for mathematics, science, and engineering</td>
+                                <td><a href="https://numpy.org/" target="_blank">Website</a></td>
+                            </tr>
+                            <tr>
+                                <td>GeoGebra</td>
+                                <td>Visualization</td>
+                                <td>Interactive geometry, algebra, statistics, and calculus application for learning and teaching</td>
+                                <td><a href="https://www.geogebra.org/" target="_blank">Website</a></td>
+                            </tr>
+                            <tr>
+                                <td>Maple</td>
+                                <td>Symbolic</td>
+                                <td>Technical computing software for mathematics, engineering, and sciences with symbolic and numeric computation</td>
+                                <td><a href="https://www.maplesoft.com/products/Maple/" target="_blank">Website</a></td>
+                            </tr>
+                            <tr>
+                                <td>LaTeX</td>
+                                <td>Document Preparation</td>
+                                <td>High-quality typesetting system for mathematical and scientific documents</td>
+                                <td><a href="https://www.latex-project.org/" target="_blank">Website</a></td>
+                            </tr>
+                            <tr>
+                                <td>Overleaf</td>
+                                <td>LaTeX Editor</td>
+                                <td>Online LaTeX editor that's easy to use with real-time collaboration and publishing tools</td>
+                                <td><a href="https://www.overleaf.com/" target="_blank">Website</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div id="funding" class="resource-section">
-                    <h3>Funding Opportunities</h3>
-                    <p>Grants, scholarships, and funding programs available for mathematical research in Morocco.</p>
+                <div id="associations" class="resource-section">
+                    <h3>Mathematical Associations</h3>
+                    <p>Major professional societies and organizations for mathematicians worldwide.</p>
                     
-                    <ul>
-                        <li>
-                            <strong>CNRST Research Grants</strong> - Annual funding for mathematical research projects in Morocco.
-                            <br>
-                            <span style="color: #666;">Next deadline: September 30, 2025</span>
-                        </li>
-                        <li>
-                            <strong>Morocco-EU Research Partnership</strong> - Collaborative research grants with European institutions.
-                            <br>
-                            <span style="color: #666;">Next deadline: November 15, 2025</span>
-                        </li>
-                        <li>
-                            <strong>Excellence Scholarships for PhD Students</strong> - Full funding for doctoral studies in mathematics.
-                            <br>
-                            <span style="color: #666;">Next deadline: March 31, 2026</span>
-                        </li>
-                        <li>
-                            <strong>International Conference Travel Grants</strong> - Support for presenting at international conferences.
-                            <br>
-                            <span style="color: #666;">Applications accepted year-round</span>
-                        </li>
-                    </ul>
+                    <div class="resource-list">
+                        <div class="resource-item">
+                            <h4>International Mathematical Union (IMU)</h4>
+                            <div class="description">
+                                International non-governmental and non-profit scientific organization that promotes international cooperation in mathematics.
+                            </div>
+                            <div class="link">
+                                <a href="https://www.mathunion.org/" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>American Mathematical Society (AMS)</h4>
+                            <div class="description">
+                                Professional society promoting mathematical research, scholarship, and education through publications, meetings, advocacy, and other programs.
+                            </div>
+                            <div class="link">
+                                <a href="https://www.ams.org/" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>European Mathematical Society (EMS)</h4>
+                            <div class="description">
+                                Organization dedicated to the development of mathematics in Europe, promoting research, supporting mathematicians, and fostering connections.
+                            </div>
+                            <div class="link">
+                                <a href="https://euromathsoc.org/" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>African Mathematical Union (AMU)</h4>
+                            <div class="description">
+                                Organization dedicated to promoting mathematics research and education in Africa, fostering collaborations, and supporting African mathematicians.
+                            </div>
+                            <div class="link">
+                                <a href="https://africamathunion.org/" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Association for Women in Mathematics (AWM)</h4>
+                            <div class="description">
+                                Organization dedicated to encouraging women and girls in the mathematical sciences, developing opportunities, and promoting equity.
+                            </div>
+                            <div class="link">
+                                <a href="https://awm-math.org/" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Mathematical Association of America (MAA)</h4>
+                            <div class="description">
+                                Professional society focusing on mathematics accessible at the undergraduate level, with emphasis on teaching, learning, and enjoying mathematics.
+                            </div>
+                            <div class="link">
+                                <a href="https://www.maa.org/" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="teaching" class="resource-section">
+                    <h3>Teaching Resources</h3>
+                    <p>Materials and platforms for mathematics education at various levels.</p>
                     
-                    <p style="margin-top: 1.5rem;">
-                        <a href="#funding-details">View detailed application requirements →</a>
-                    </p>
+                    <div class="resource-list">
+                        <div class="resource-item">
+                            <h4>MIT OpenCourseWare (Mathematics)</h4>
+                            <div class="description">
+                                Free and open publication of material from MIT courses, covering undergraduate and graduate mathematics courses.
+                            </div>
+                            <div class="link">
+                                <a href="https://ocw.mit.edu/search/?d=Mathematics" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Khan Academy (Mathematics)</h4>
+                            <div class="description">
+                                Free educational resources including lessons, exercises, and instructional videos covering K-12 mathematics, calculus, linear algebra, and more.
+                            </div>
+                            <div class="link">
+                                <a href="https://www.khanacademy.org/math" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>3Blue1Brown</h4>
+                            <div class="description">
+                                Animated mathematics videos with an emphasis on visual understanding of concepts in linear algebra, calculus, and other fields.
+                            </div>
+                            <div class="link">
+                                <a href="https://www.3blue1brown.com/" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>MAA Curriculum Inspirations</h4>
+                            <div class="description">
+                                Problems, solutions, and teaching resources inspired by mathematical competitions like the AMC.
+                            </div>
+                            <div class="link">
+                                <a href="https://www.maa.org/math-competitions/teachers/curriculum-inspirations" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>NCTM Illuminations</h4>
+                            <div class="description">
+                                Resources for teaching and learning mathematics including interactive tools, lesson plans, and activities.
+                            </div>
+                            <div class="link">
+                                <a href="https://illuminations.nctm.org/" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Brilliant</h4>
+                            <div class="description">
+                                Interactive courses to build problem-solving skills in mathematics, science, and computer science.
+                            </div>
+                            <div class="link">
+                                <a href="https://brilliant.org/courses/math/" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="openaccess" class="resource-section">
+                    <h3>Open Access Resources</h3>
+                    <p>Freely available educational and research materials for mathematics.</p>
+                    
+                    <div class="resource-list">
+                        <div class="resource-item">
+                            <h4>Project Euclid</h4>
+                            <div class="description">
+                                Platform for independent and society journals, books, and conference proceedings in mathematics and statistics with many open access publications.
+                            </div>
+                            <div class="link">
+                                <a href="https://projecteuclid.org/" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Mathematical Sciences Publishers (MSP)</h4>
+                            <div class="description">
+                                Non-profit publisher of high-quality mathematical journals with a focus on affordability and accessibility.
+                            </div>
+                            <div class="link">
+                                <a href="https://msp.org/" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>AMS Open Math Notes</h4>
+                            <div class="description">
+                                Collection of freely downloadable mathematical works in progress including course notes, textbooks, and research expositions.
+                            </div>
+                            <div class="link">
+                                <a href="https://www.ams.org/open-math-notes" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>DOAJ (Mathematics journals)</h4>
+                            <div class="description">
+                                Directory of Open Access Journals listing high-quality, peer-reviewed open access journals in mathematics.
+                            </div>
+                            <div class="link">
+                                <a href="https://doaj.org/subjects/mathematics" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                        
+                        <div class="resource-item">
+                            <h4>Open Textbook Library (Mathematics)</h4>
+                            <div class="description">
+                                Collection of free, peer-reviewed, and openly-licensed textbooks in mathematics and other disciplines.
+                            </div>
+                            <div class="link">
+                                <a href="https://open.umn.edu/opentextbooks/subjects/mathematics" target="_blank">Access Resources</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -390,9 +623,9 @@
     <footer>
         <p>&copy; 2025 Moroccan Mathematicians Network</p>
         <div class="social">
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="#" target="_blank">Twitter</a>
-            <a href="#" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/groups/14622272/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/MoroccanN44415" target="_blank">Twitter</a>
+            <a href="https://www.facebook.com/profile.php?id=61573770495839" target="_blank">Facebook</a>
         </div>
     </footer>
 </body>
