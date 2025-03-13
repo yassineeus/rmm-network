@@ -4,26 +4,288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moroccan Mathematicians Network</title>
-    <link rel="stylesheet" href="css/style.css">
     <!-- MathJax for mathematical formulas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 30px;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        /* Logo styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-image {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .mmn-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a291a;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: #006633;
+            max-width: 250px;
+            margin-top: 5px;
+        }
+        
+        /* Custom MMN logo */
+        .mmn-logo {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid #006633;
+            overflow: hidden;
+        }
+        
+        .mmn-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        
+        .mmn-circle-dots {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+        
+        .mmn-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: #006633;
+        }
+        
+        /* Navigation styles */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: #006633;
+            color: white;
+        }
+        
+        /* Main content styles */
+        main {
+            padding: 40px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f0f8f1;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h2 {
+            font-size: 32px;
+            color: #006633;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            color: #006633;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: #1a291a;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .formula-example {
+            text-align: center;
+        }
+        
+        .formula {
+            margin: 30px 0;
+            font-size: 24px;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #1a291a;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social {
+            margin-top: 20px;
+        }
+        
+        .social a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social a:hover {
+            color: #00cc66;
+            text-decoration: underline;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>MMN</h1>
-            <p>Moroccan Mathematicians Network</p>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="mmn-logo">
+                    <!-- Creating the MMN logo with dots around a circle -->
+                    <div class="mmn-text-overlay">MMN</div>
+                    <!-- This would be replaced with the actual SVG or image in a real implementation -->
+                    <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Light pink circle on the left -->
+                        <circle cx="20" cy="20" r="15" fill="#e0b0bc" opacity="0.7"/>
+                        <!-- Light blue-gray circle on the right -->
+                        <circle cx="60" cy="60" r="12" fill="#b0c4c8" opacity="0.7"/>
+                        <!-- Dotted line across -->
+                        <line x1="0" y1="40" x2="80" y2="40" stroke="#333333" stroke-width="0.5" stroke-dasharray="2,2"/>
+                        <!-- Text overlays would be done with actual text elements in HTML -->
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="mmn-text">MMN</div>
+                    <p>Moroccan Mathematicians Network</p>
+                    <p><small>Connecting Mathematical Minds Across Morocco</small></p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="english.html">Home</a></li>
+                    <li><a href="members_en.html">Members</a></li>
+                    <li><a href="events_en.html">Events</a></li>
+                    <li><a href="resources_en.html">Resources</a></li>
+                    <li><a href="contact_en.html">Contact</a></li>
+                    <li><a href="index.html">Français</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="english.html">Home</a></li>
-                <li><a href="members_en.html">Members</a></li>
-                <li><a href="events_en.html">Events</a></li>
-                <li><a href="resources_en.html">Resources</a></li>
-                <li><a href="contact_en.html">Contact</a></li>
-                <li><a href="index.html">Français</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -66,7 +328,7 @@
     <footer>
         <p>&copy; 2025 Moroccan Mathematicians Network</p>
         <div class="social">
-            <a href="#" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/groups/14622272/" target="_blank">LinkedIn</a>
             <a href="#" target="_blank">Twitter</a>
             <a href="#" target="_blank">GitHub</a>
         </div>
