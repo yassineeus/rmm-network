@@ -7,7 +7,7 @@
     <!-- MathJax for mathematical formulas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
-        /* CSS based exactly on Yassine's layout style */
+        /* CSS based exactly on Yassine's layout style with MMN logo adjustments */
         * {
             margin: 0;
             padding: 0;
@@ -271,15 +271,7 @@
     <div class="container">
         <!-- Navigation Section (Left) -->
         <div class="nav-section">
-            <div class="logo">
-                <!-- MMN Logo representation -->
-                <div class="logo-circles">
-                    <div class="circle circle-1"></div>
-                    <div class="circle circle-2"></div>
-                    <div class="logo-line"></div>
-                </div>
-                <div class="mmn-badge">MMN</div>
-            </div>
+            <!-- Original logo removed from here -->
             
             <h1>MMN</h1>
             <p>Moroccan Mathematicians Network</p>
@@ -330,6 +322,44 @@
         
         <!-- Photo Section (Right) -->
         <div class="photo-section">
+            <!-- Official MMN Logo -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <svg width="200" height="200" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <!-- MMN Text -->
+                    <text x="300" y="320" font-family="Times New Roman, serif" font-size="140" font-weight="bold" text-anchor="middle" fill="#1a291a">MMN</text>
+                    
+                    <!-- Star above the first M -->
+                    <polygon points="192,210 202,190 212,210 202,190 222,200 202,200 222,200 212,210" fill="#721c1c"/>
+                    
+                    <!-- Circular dots around the top -->
+                    <circle cx="110" cy="150" r="15" fill="#1a291a"/>
+                    <circle cx="140" cy="110" r="15" fill="#1a291a"/>
+                    <circle cx="180" cy="80" r="15" fill="#1a291a"/>
+                    <circle cx="220" cy="60" r="15" fill="#1a291a"/>
+                    <circle cx="260" cy="50" r="15" fill="#721c1c"/>
+                    <circle cx="300" cy="40" r="15" fill="#721c1c"/>
+                    <circle cx="340" cy="50" r="15" fill="#721c1c"/>
+                    <circle cx="380" cy="60" r="15" fill="#721c1c"/>
+                    <circle cx="420" cy="80" r="15" fill="#721c1c"/>
+                    <circle cx="460" cy="110" r="15" fill="#888888"/>
+                    <circle cx="490" cy="150" r="15" fill="#888888"/>
+                    <circle cx="510" cy="190" r="15" fill="#888888"/>
+                    <circle cx="520" cy="230" r="15" fill="#888888"/>
+                    
+                    <!-- Circular text - top -->
+                    <path id="topCircle" d="M 70,300 A 230,230 0 0,1 530,300" fill="none"/>
+                    <text font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#721c1c">
+                        <textPath href="#topCircle" startOffset="50%" text-anchor="middle">MOROCCAN MATHEMATICAL NETWORK</textPath>
+                    </text>
+                    
+                    <!-- Circular text - bottom -->
+                    <path id="bottomCircle" d="M 70,300 A 230,230 0 0,0 530,300" fill="none"/>
+                    <text font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#721c1c">
+                        <textPath href="#bottomCircle" startOffset="50%" text-anchor="middle">MOROCCAN MATHEMATICAL NETWORK</textPath>
+                    </text>
+                </svg>
+            </div>
+            
             <!-- QR Code for LinkedIn group -->
             <div style="background-color: white; padding: 10px; border-radius: 5px; margin-bottom: 20px; text-align: center;">
                 <img src="qr-code-placeholder.jpg" alt="MMN LinkedIn Group QR Code" style="width: 100%; max-width: 180px;">
