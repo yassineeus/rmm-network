@@ -3,177 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - Moroccan Mathematicians Network</title>
+    <title>Scientific Research - Moroccan Mathematicians Network</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- MathJax for mathematical formulas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
-        .event-grid {
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            margin-bottom: 2rem;
+        }
+        
+        .logo h1 {
+            color: #006633;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            color: #2056a8;
+            margin-bottom: 1rem;
+        }
+        
+        .research-areas {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
         }
         
-        .event-card {
+        .research-card {
             background-color: white;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
             transition: transform 0.3s ease;
+            border-left: 4px solid #2056a8;
         }
         
-        @media (min-width: 768px) {
-            .event-card {
-                flex-direction: row;
-            }
-        }
-        
-        .event-card:hover {
+        .research-card:hover {
             transform: translateY(-5px);
         }
         
-        .event-date {
-            background-color: #2056a8;
-            color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            text-align: center;
-            flex: 0 0 120px;
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .event-date {
-                margin-bottom: 0;
-                margin-right: 1.5rem;
-            }
-        }
-        
-        .event-date .month {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .event-date .day {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .event-date .year {
-            font-size: 1rem;
-        }
-        
-        .event-content {
-            flex: 1;
-        }
-        
-        .event-content h3 {
+        .research-card h3 {
             color: #2056a8;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             font-size: 1.4rem;
         }
         
-        .event-content .location {
-            font-style: italic;
-            margin-bottom: 0.5rem;
-            color: #666;
+        .research-card p {
+            margin-bottom: 1.5rem;
         }
         
-        .event-content .description {
-            margin-bottom: 1rem;
-        }
-        
-        .event-content .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .event-content .tags span {
-            background-color: #e0eaef;
-            color: #2056a8;
-            padding: 0.3rem 0.6rem;
-            border-radius: 3px;
-            font-size: 0.9rem;
-        }
-        
-        .event-actions {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .event-actions a {
+        .research-card .link-button {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 3px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .event-actions .register {
             background-color: #2056a8;
             color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
         
-        .event-actions .register:hover {
+        .research-card .link-button:hover {
             background-color: #163d7a;
         }
         
-        .event-actions .details {
-            border: 1px solid #2056a8;
+        .resources-section {
+            margin-top: 3rem;
+        }
+        
+        .resources-section h3 {
             color: #2056a8;
-        }
-        
-        .event-actions .details:hover {
-            background-color: #e0eaef;
-        }
-        
-        .filter-tabs {
-            display: flex;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
             border-bottom: 1px solid #ddd;
         }
         
-        .filter-tabs button {
-            padding: 0.75rem 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            position: relative;
+        .resources-list {
+            list-style-type: none;
+            padding: 0;
         }
         
-        .filter-tabs button.active {
-            color: #2056a8;
-            font-weight: bold;
-        }
-        
-        .filter-tabs button.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #2056a8;
-        }
-        
-        .calendar-section {
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: #f5f5f5;
+        .resources-list li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
             border-radius: 5px;
         }
         
-        .calendar-section h3 {
-            margin-bottom: 1.5rem;
+        .resources-list li a {
             color: #2056a8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .resources-list li a:hover {
+            text-decoration: underline;
+        }
+        
+        .resources-list li p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .social {
+            margin-top: 1rem;
+        }
+        
+        .social a {
+            margin: 0 10px;
+            color: #2056a8;
+            text-decoration: none;
+        }
+        
+        .social a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -183,151 +149,89 @@
             <h1>MMN</h1>
             <p>Moroccan Mathematicians Network</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="english.html">Home</a></li>
-                <li><a href="members_en.html">Members</a></li>
-                <li><a href="events_en.html">Events</a></li>
-                <li><a href="resources_en.html">Resources</a></li>
-                <li><a href="contact_en.html">Contact</a></li>
-                <li><a href="evenements.html">Français</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h2>Events</h2>
-            <p>Discover conferences, seminars, and workshops organized by our network</p>
+            <h2>Scientific Research</h2>
+            <p>Explore mathematical research areas and specialized seminars</p>
         </section>
 
-        <section class="filter-tabs">
-            <button class="active">Upcoming Events</button>
-            <button>Past Events</button>
-            <button>All Events</button>
-        </section>
-
-        <section class="event-grid">
-            <!-- Event 1 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">Apr</div>
-                    <div class="day">15</div>
-                    <div class="year">2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Annual Conference on Algebraic Geometry</h3>
-                    <div class="location">University Mohammed V, Rabat</div>
-                    <div class="description">
-                        <p>Join us for the 5th Annual Conference on Algebraic Geometry, bringing together leading mathematicians from Morocco and internationally. This year's focus is on recent advances in moduli spaces and their applications.</p>
-                    </div>
-                    <div class="tags">
-                        <span>Conference</span>
-                        <span>Algebraic Geometry</span>
-                        <span>Rabat</span>
-                    </div>
-                    <div class="event-actions">
-                        <a href="#register" class="register">Register</a>
-                        <a href="#details" class="details">More Details</a>
-                    </div>
-                </div>
+        <section class="research-areas">
+            <!-- Topology and Geometry -->
+            <div class="research-card">
+                <h3>Topology & Geometry</h3>
+                <p>Research in differential geometry, algebraic topology, geometric analysis, and applications to theoretical physics.</p>
+                <a href="topology-geometry.html" class="link-button">Explore Seminars</a>
             </div>
 
-            <!-- Event 2 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">May</div>
-                    <div class="day">10</div>
-                    <div class="year">2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Workshop: Applied Mathematics for Climate Modeling</h3>
-                    <div class="location">École Nationale des Sciences Appliquées, Marrakech</div>
-                    <div class="description">
-                        <p>A two-day intensive workshop on differential equations and numerical methods applied to climate modeling. The workshop will include hands-on sessions and collaborative problem-solving.</p>
-                    </div>
-                    <div class="tags">
-                        <span>Workshop</span>
-                        <span>Applied Mathematics</span>
-                        <span>Marrakech</span>
-                    </div>
-                    <div class="event-actions">
-                        <a href="#register" class="register">Register</a>
-                        <a href="#details" class="details">More Details</a>
-                    </div>
-                </div>
+            <!-- Commutative Algebra -->
+            <div class="research-card">
+                <h3>Commutative Algebra</h3>
+                <p>Research on rings and modules, algebraic structures, homological algebra, and connections with algebraic geometry.</p>
+                <a href="commutative-algebra.html" class="link-button">Explore Seminars</a>
             </div>
 
-            <!-- Event 3 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">Jun</div>
-                    <div class="day">22</div>
-                    <div class="year">2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Seminar: Number Theory and Cryptography</h3>
-                    <div class="location">University Hassan II, Casablanca</div>
-                    <div class="description">
-                        <p>A special seminar featuring guest speaker Prof. Ahmed Laghribi on recent developments in number theory and their applications to modern cryptography and cybersecurity.</p>
-                    </div>
-                    <div class="tags">
-                        <span>Seminar</span>
-                        <span>Number Theory</span>
-                        <span>Cryptography</span>
-                        <span>Casablanca</span>
-                    </div>
-                    <div class="event-actions">
-                        <a href="#register" class="register">Register</a>
-                        <a href="#details" class="details">More Details</a>
-                    </div>
-                </div>
+            <!-- Analysis -->
+            <div class="research-card">
+                <h3>Analysis</h3>
+                <p>Research in functional analysis, harmonic analysis, PDE theory, spectral theory, and operator theory.</p>
+                <a href="analysis.html" class="link-button">Explore Seminars</a>
             </div>
 
-            <!-- Event 4 -->
-            <div class="event-card">
-                <div class="event-date">
-                    <div class="month">Jul</div>
-                    <div class="day">05</div>
-                    <div class="year">2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Summer School: Introduction to Topology</h3>
-                    <div class="location">University Cadi Ayyad, Marrakech</div>
-                    <div class="description">
-                        <p>A week-long summer school designed for graduate students and early-career researchers. The program covers fundamental concepts in topology and their applications across different fields of mathematics.</p>
-                    </div>
-                    <div class="tags">
-                        <span>Summer School</span>
-                        <span>Topology</span>
-                        <span>Graduate Students</span>
-                        <span>Marrakech</span>
-                    </div>
-                    <div class="event-actions">
-                        <a href="#register" class="register">Register</a>
-                        <a href="#details" class="details">More Details</a>
-                    </div>
-                </div>
+            <!-- Probability -->
+            <div class="research-card">
+                <h3>Probability</h3>
+                <p>Research on stochastic processes, random matrices, limit theorems, and probabilistic methods in mathematics.</p>
+                <a href="probability.html" class="link-button">Explore Seminars</a>
+            </div>
+
+            <!-- Numerical Analysis -->
+            <div class="research-card">
+                <h3>Numerical Analysis</h3>
+                <p>Research on approximation theory, numerical solutions of PDEs, computational methods, and high-performance computing.</p>
+                <a href="numerical-analysis.html" class="link-button">Explore Seminars</a>
+            </div>
+
+            <!-- Statistics & Machine Learning -->
+            <div class="research-card">
+                <h3>Statistics & Machine Learning</h3>
+                <p>Research in statistical inference, data analysis, machine learning algorithms, and applications to real-world problems.</p>
+                <a href="statistics-ml.html" class="link-button">Explore Seminars</a>
             </div>
         </section>
 
-        <section class="calendar-section">
-            <h3>Academic Calendar</h3>
-            <p>View our complete calendar of mathematical events across Morocco. The calendar includes conferences, workshops, seminars, and submission deadlines for important journals and conferences.</p>
-            <p>For a detailed view of all scheduled events, please <a href="#calendar">click here</a> to access our interactive calendar.</p>
-        </section>
-
-        <section>
-            <h2>Propose an Event</h2>
-            <p>Are you interested in organizing a mathematical event with our network? We welcome proposals for conferences, workshops, seminars, and collaborative research meetings.</p>
-            <p>To submit your event proposal, please visit our <a href="contact_en.html">Contact page</a> and fill out the event proposal form.</p>
+        <section class="resources-section">
+            <h3>Research Resources</h3>
+            <ul class="resources-list">
+                <li>
+                    <a href="https://arxiv.org/archive/math" target="_blank">arXiv Mathematics</a>
+                    <p>Access the latest preprints in all areas of mathematics.</p>
+                </li>
+                <li>
+                    <a href="https://mathscinet.ams.org/" target="_blank">MathSciNet</a>
+                    <p>Comprehensive mathematical database with reviews and bibliographic information.</p>
+                </li>
+                <li>
+                    <a href="https://www.zbmath.org/" target="_blank">zbMATH</a>
+                    <p>Information service for mathematical literature, providing reviews and abstracts.</p>
+                </li>
+                <li>
+                    <a href="https://projecteuclid.org/" target="_blank">Project Euclid</a>
+                    <p>Collection of journals in mathematics and statistics, with many open-access publications.</p>
+                </li>
+                <li>
+                    <a href="https://www.ams.org/open-math-notes" target="_blank">AMS Open Math Notes</a>
+                    <p>Platform for course notes, textbooks, and expository materials in mathematics.</p>
+                </li>
+            </ul>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Moroccan Mathematicians Network</p>
         <div class="social">
-            <a href="#" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/groups/14622272/" target="_blank">LinkedIn</a>
             <a href="#" target="_blank">Twitter</a>
             <a href="#" target="_blank">GitHub</a>
         </div>
